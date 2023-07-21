@@ -1,5 +1,7 @@
 
 const mysql=require('mysql2/promise');
+console.log('start  :'+Date());
+//main();
 
 async function main(){
     const cnnctn=await mysql.createConnection({
@@ -7,12 +9,11 @@ async function main(){
         user:'nhumf_sion',
         password:'Noriyuki6403',
         database:'nhumf_sion'
-    })
-    await console.log('main :'+Date());
+    });
+    console.log('main :'+Date());
+    //cnnctn.end();
+    //cnnctn.end()
+    console.log(`close connection   :`+Date());
 };
-
-
-//execute main
-console.log('start  :'+Date());
-main();
+console.log('endendend');
 console.log('end    :'+Date());
