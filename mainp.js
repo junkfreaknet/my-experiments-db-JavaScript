@@ -10,10 +10,11 @@ const main= async()=>{
         password:'Noriyuki6403',
         database:'nhumf_sion'
     });
-    const loadTable=()=>cnnctn.query('select distinct syu_ymd from select_locale_child_202212011001_cp_csv');
+    //const loadTable=()=>cnnctn.query('select distinct syu_ymd from select_locale_child_202212011001_cp_csv');
+    const loadTable=()=>cnnctn.query('select distinct syu_ymd,bin_kb,haibun_mad from select_locale_child_202212011001_cp_csv');
     const result=await loadTable();
-    //console.log(result);
-    console.log(result[0]);
+    console.log(result);
+    //console.log(result[0]);
     console.log(await loadTable());
 
     //
