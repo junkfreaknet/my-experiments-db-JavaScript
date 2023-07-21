@@ -1,26 +1,33 @@
-//  remote database experiment
+const mysql=require('mysql2/promise');
 
-//  arguments
-const mysql=require('mysql2');
-const cnnctn=mysql.createConnection({
-    host:"public.nhumf.tyo2.database-hosting.conoha.io",
-    user:"nhumf_sion",
-    password:"Noriyuki6403",
-    database:"nhumf_sion"
-});
+(async()=>{
+    
+    console.log('start  :'+Date());
 
-//  start
-console.log('start  :'+Date());
+    const cnnctn=mysql.createConnection(
+        {
+            host:'public.nhumf.tyo2.database-hosting.conoha.io',
+            user:'nhumf_sion',
+            password:'Noriyuki6403',
+            database:'nhumf_sion'
+        }
+    );
 
-//  main
-cnnctn.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected to MySQL DB!");
-  }
-)
+    try{
 
-cnnctn.end();
+        const strsql='select distinct syu_ymd from select_locale_child_202212011001_cp_csv';
+        const [rows,fields]=(await cnnctn).query(sql);
 
+        for (const val of rows){
+            console.log(val);
+        }
+    }
+    catch(e){
+        console.log('error*****:'+e);
+    }
+    finally{
+        (await cnnctn).end();
+    }
+    console.log('end    :'+Date());
 
-//  at last
-console.log('end    :'+Date());
+})();
