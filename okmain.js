@@ -4,7 +4,7 @@ const mysql=require('mysql2/promise');
     
     console.log('start  :'+Date());
 
-    const cnnctn=mysql.createConnection(
+    const cnnctn=await mysql.createConnection(
         {
             host:'public.nhumf.tyo2.database-hosting.conoha.io',
             user:'nhumf_sion',
@@ -16,8 +16,8 @@ const mysql=require('mysql2/promise');
     try{
 
         const strsql='select distinct syu_ymd from select_locale_child_202212011001_cp_csv';
-        console.log('sql is :'+strsql);
-        const [rows,fields]=(await (await cnnctn).execute(strsql));
+        //console.log('sql is :'+strsql);
+        const [rows,fields]=await cnnctn.execute(strsql);
 
         for (const val of rows){
             console.log(val);
