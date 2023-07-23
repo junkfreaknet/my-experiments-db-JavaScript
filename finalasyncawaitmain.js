@@ -12,7 +12,7 @@ const main= async()=>{
     });
     //const loadTable=()=>cnnctn.query('select distinct syu_ymd from select_locale_child_202212011001_cp_csv');
     //const strsql='select distinct syu_ymd,bin_kb,haibun_mad from select_locale_child_202212011001_cp_csv';
-    const strsql='select syu_ymd,bin_kb,haibun_mad,ad_ten_no,haiso_course,haiso_order,ten_no,ten_nm_kanji from select_locale_child_202212011001_cp_csv order by syu_ymd,bin_kb,haibun_mad,ad_ten_no';    
+    const strsql='select syu_ymd,bin_kb,haibun_mad,ad_ten_no,haiso_course,haiso_order,ten_no,ten_nm_kanji from select_locale_child_202212011001_cp_csv order by syu_ymd,bin_kb,haibun_mad,ad_ten_no';
     const loadTable=()=>cnnctn.execute(strsql);
     const result=await loadTable();
     
