@@ -28,7 +28,7 @@ function displayResult(recieve_rows){
         console.log((i+1)+'*****'+a_row.syu_ymd+','+a_row.bin_kb+','+a_row.haibun_mad+','+a_row.ad_ten_no+','+a_row.haiso_course+','+a_row.haiso_order+','+a_row.ten_no+','+a_row.ten_nm_kanji);
         //console.log((i+1)+'*****'+a_row.syu_ymd+','+a_row.bin_kb+','+a_row.haibun_mad);
     }
-    console.log('records is :'+recieve_rows.length);
+    console.log('count  :'+recieve_rows.length);
 }
 //
 //
