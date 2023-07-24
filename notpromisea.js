@@ -1,8 +1,6 @@
 //const { promiseImpl } = require('ejs');
 //const { Promise } = require('node-fetch');
 
-
-
 async function example1 () {
     const mysql = require('mysql2/promise');
     const conn = await mysql.createConnection({
