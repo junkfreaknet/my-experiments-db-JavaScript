@@ -13,7 +13,7 @@ function trycatchfinally(){
             password:'Noriyuki6403',
             database:'nhumf_sion'
         });
-    
+        
         console.log('connected');
         const strSQL='select distinct syu_ymd,bin_kb,haibun_mad,ad_ten_no,haiso_course,haiso_order,ten_no,ten_nm_kanji from select_locale_child_202212011001_cp_csv order by syu_ymd,bin_kb,haibun_mad,ad_ten_no';
         //const strSQL='select distinct syu_ymd,bin_kb,haibun_mad,ad_ten_no from select_locale_child_202212011001_cp_csv';
@@ -28,7 +28,7 @@ function trycatchfinally(){
             
         }
         console.log('length :'+rowarray.length);**/
-
+        
         await cnnctn.end();
     }
     catch(error){
